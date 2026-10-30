@@ -1,0 +1,25 @@
+# Local environment for both notebooks (tested with Python 3.12.10 on 2026-10-30).
+#   python -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt      (Windows)
+#   .venv/bin/python -m pip install -r requirements.txt              (Linux/macOS)
+# Not needed on Colab: notebook 01 installs only mapclassify, the rest is already there.
+
+# Geocoding (Nominatim and Photon, both without an API key)
+geopy==2.5.0
+
+# Tables, geometries and distances in metres
+pandas==3.1.0
+numpy==2.5.4
+geopandas==1.2.0
+shapely==2.2.0
+pyproj==3.8.0
+pyogrio==0.13.0
+
+# Maps and figures (explore() needs folium + mapclassify)
+folium==0.20.0
+mapclassify==2.11.0
+matplotlib==3.11.2
+
+# Jupyter
+jupyterlab==4.6.5
+nbconvert==7.17.2

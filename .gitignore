@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Cache de geocodificación: se regenera al correr los notebooks (y evita repetir pedidos a Nominatim/Photon)
+cache/
+
+# Secretos y credenciales (hoy no se usa ninguno: los dos geocodificadores son sin API key)
+.env
+.env.*
+!.env.example
+
+# OS y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

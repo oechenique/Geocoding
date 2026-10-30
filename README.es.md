@@ -41,7 +41,7 @@ Cada pedido pasa por un `RateLimiter` (1 s entre llamadas, 2 reintentos) con un 
 - **Medir contra una referencia, no contra la confianza del geocodificador.** Photon devolvió una respuesta creíble para los 10; solo la distancia a Wikidata muestra que 3 están mal.
 - **Las coordenadas de referencia están fijas en el notebook, con su QID**, en vez de bajarse al correr: si alguien edita Wikidata, la comparación no se mueve.
 - **Mismas rutas que antes** (`Notebook/01_…`, `Notebook/02_…`), para que los links viejos de Colab sigan andando; las versiones de 2024, que definían funciones y nunca las llamaban, están en [`legacy/`](legacy/).
-- **Sin mapa de fondo en la figura.** Los tiles de CARTO ahora piden API key y los servidores de tiles de OSM bloquean las descargas por script (403); a escala de ciudad, un gráfico de barras del error dice más que un mapa.
+- **Sin mapa de fondo en la figura.** Los tiles de CARTO ahora piden API key y los servidores de tiles de OSM bloquean el User-Agent por defecto de contextily (403; se evita desde contextily 1.7 con `headers={"user-agent": ...}`, ver [contextily#286](https://github.com/geopandas/contextily/issues/286)); a escala de ciudad, un gráfico de barras del error dice más que un mapa.
 
 ## Límites y lo que haría en un caso real
 

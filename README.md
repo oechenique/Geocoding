@@ -41,7 +41,7 @@ Every request goes through a `RateLimiter` (1 s between calls, 2 retries) with a
 - **Measure against a reference, not against the geocoder's confidence.** Photon returned a plausible-looking answer for all 10 landmarks; only the distance to Wikidata shows that 3 are wrong.
 - **Reference coordinates are fixed in the notebook with their QIDs**, not fetched at run time, so the comparison does not move if someone edits Wikidata.
 - **Same paths as before** (`Notebook/01_…`, `Notebook/02_…`), so the old Colab links still work; the 2024 versions, which defined functions and never called them, are in [`legacy/`](legacy/).
-- **No basemap in the figure.** CARTO tiles now need an API key and the OSM tile servers block scripted downloads (403); a bar chart of the errors says more than a map at city scale anyway.
+- **No basemap in the figure.** CARTO tiles now need an API key and the OSM tile servers block contextily's default User-Agent (403; avoidable since contextily 1.7 with `headers={"user-agent": ...}`, see [contextily#286](https://github.com/geopandas/contextily/issues/286)); a bar chart of the errors says more than a map at city scale anyway.
 
 ## Limits and what I'd do in a real case
 
